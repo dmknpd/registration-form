@@ -1,7 +1,8 @@
 import axios from "axios";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { useState } from "react";
+import { useContext } from "react";
+import { CustomContext } from "../../Context";
 import { useNavigate } from "react-router";
 
 import Menu from "../Menu/Menu";
@@ -15,7 +16,7 @@ const SignUpShecma = Yup.object().shape({
 });
 
 const Registation = () => {
-  const [user, setUser] = useState({});
+  const { setUser } = useContext(CustomContext);
 
   const navigate = useNavigate();
 
@@ -32,24 +33,20 @@ const Registation = () => {
 
             axios
               .post("http://localhost:3001/register", userValues)
-              .then(({ data }) =>
-                setUser({
+              .then(({ data }) => {
+                const newUser = {
                   token: data.accessToken,
                   ...data.user,
-                })
-              )
+                };
+                setUser(newUser);
+
+                localStorage.setItem("user", JSON.stringify(newUser));
+              })
               .catch((error) => console.log(error.message));
             setSubmitting(false);
             resetForm();
 
-            // localStorage.setItem(
-            //   "user",
-            //   JSON.stringify({
-            //     token: user.accessToken,
-            //     ...user,
-            //   })
-            // );
-            // navigate("/");
+            navigate("/");
           }}
         >
           {({ isSubmitting }) => (
