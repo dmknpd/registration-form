@@ -13,7 +13,6 @@ const SignUpShecma = Yup.object().shape({
 
 const Login = () => {
   const { user, setUser } = useContext(CustomContext);
-  const [email, setEmail] = useState("");
 
   const [error, setError] = useState("");
 
@@ -52,6 +51,7 @@ const Login = () => {
             initialValues={{ email: "", password: "" }}
             validationSchema={SignUpShecma}
             onSubmit={(values, { setSubmitting, resetForm }) => {
+              console.log(values);
               axios
                 .post("http://localhost:3001/login", values)
                 .then(({ data }) => {
@@ -67,10 +67,11 @@ const Login = () => {
                   navigate("/");
                 })
                 .catch((error) => {
-                  resetForm({ values: { email: email, password: "" } });
+                  resetForm({ values: { password: "" } });
                   if (error.response) {
                     setError(error.response.data);
                   } else {
+                    console.log("else");
                     console.log(error.message);
                   }
                   setSubmitting(false);
@@ -88,8 +89,6 @@ const Login = () => {
                     name="email"
                     id="email"
                     className="rounded h-8 px-2"
-                    onChange={(e) => setEmail(e.target.value)}
-                    value={email}
                   />
                   <ErrorMessage
                     name="email"
