@@ -77,7 +77,7 @@ const Main = () => {
 
       {user ? (
         <>
-          <p className="text-3xl font-bold text-white">Hello ${user.email}</p>
+          <p className="text-3xl font-bold text-white">Hello {user.email}</p>
           <button
             className="bg-gray-500 text-white py-2 px-4 rounded"
             onClick={logOut}
