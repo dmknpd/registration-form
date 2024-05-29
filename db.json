@@ -9,6 +9,16 @@
       "email": "1212@mail.com",
       "password": "$2a$10$3ewTHSbV4rtu1fCp.TFEq.pOv2fuZafewYowCIWLyzKayWL4x2TEy",
       "id": 2
+    },
+    {
+      "email": "1221@mail.com",
+      "password": "$2a$10$67TCV3VjQMRW61zYaQ4RhOBtbM8Iy9ywwr1r2BoeHdAntwCFEsgtm",
+      "id": 3
+    },
+    {
+      "email": "1211@mail.com",
+      "password": "$2a$10$t/q/Px42uxM1vXx/8LGtDO84.GXU8mmfbY4Wl.ftgzN8AYnejNoXC",
+      "id": 4
     }
   ]
 }
