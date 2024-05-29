@@ -19,6 +19,11 @@
       "email": "1211@mail.com",
       "password": "$2a$10$t/q/Px42uxM1vXx/8LGtDO84.GXU8mmfbY4Wl.ftgzN8AYnejNoXC",
       "id": 4
+    },
+    {
+      "email": "aaaa@mail.com",
+      "password": "$2a$10$5Lr3RhtzIRYUwoYhE4o/NuqtPMfm2HkjTzSpRclZqHTUo7liQGYzi",
+      "id": 5
     }
   ],
   "posts": [
@@ -26,6 +31,11 @@
       "userId": 1,
       "content": "12",
       "id": 1
+    },
+    {
+      "userId": 5,
+      "content": "aaaa",
+      "id": 2
     }
   ]
 }
